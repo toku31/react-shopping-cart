@@ -49,44 +49,45 @@ class App extends React.Component {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   };
 
-  sortProducts = (event) => {
-    console.log(event.target.value);
-    const sort = event.target.value;
-    // imp
-    this.setState((state) => ({
-      sort: sort,
-      products: this.state.products
-        .slice()
-        .sort((a, b) =>
-          sort === 'lowest'
-            ? a.price > b.price
-              ? 1
-              : -1
-            : sort === 'highest'
-            ? a.price < b.price
-              ? 1
-              : -1
-            : a._id < b._id
-            ? 1
-            : -1
-        ),
-    }));
-  };
+  // *** redux作成より不要になる
+  // sortProducts = (event) => {
+  //   console.log(event.target.value);
+  //   const sort = event.target.value;
+  //   // imp
+  //   this.setState((state) => ({
+  //     sort: sort,
+  //     products: this.state.products
+  //       .slice()
+  //       .sort((a, b) =>
+  //         sort === 'lowest'
+  //           ? a.price > b.price
+  //             ? 1
+  //             : -1
+  //           : sort === 'highest'
+  //           ? a.price < b.price
+  //             ? 1
+  //             : -1
+  //           : a._id < b._id
+  //           ? 1
+  //           : -1
+  //       ),
+  //   }));
+  // };
 
-  filterProducts = (event) => {
-    // impl
-    console.log(event.target.value);
-    if (event.target.value === '') {
-      this.setState({ size: event.target.value, products: data.products });
-    } else {
-      this.setState({
-        size: event.target.value,
-        products: data.products.filter(
-          (product) => product.availableSizes.indexOf(event.target.value) >= 0
-        ),
-      });
-    }
-  };
+  // filterProducts = (event) => {
+  //   // impl
+  //   console.log(event.target.value);
+  //   if (event.target.value === '') {
+  //     this.setState({ size: event.target.value, products: data.products });
+  //   } else {
+  //     this.setState({
+  //       size: event.target.value,
+  //       products: data.products.filter(
+  //         (product) => product.availableSizes.indexOf(event.target.value) >= 0
+  //       ),
+  //     });
+  //   }
+  // };
 
   render() {
     return (
@@ -98,7 +99,7 @@ class App extends React.Component {
           <main>
             <div className='content'>
               <div className='main'>
-                <Filter
+                {/* <Filter
                   count={this.state.products.length}
                   size={this.state.size}
                   sort={this.state.sort}
@@ -108,7 +109,7 @@ class App extends React.Component {
                 <Products
                   products={this.state.products}
                   addToCart={this.addToCart}
-                ></Products>
+                ></Products> */}
               </div>
               <div className='sidebar'>
                 <Cart
