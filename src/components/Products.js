@@ -6,6 +6,7 @@ import Zoom from 'react-reveal/Zoom';
 // import { connect } from 'mongoose';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../actions/productActions';
+import {addToCart} from "../actions/cartActions"
 
 // export default class Products extends Component {
 class Products extends Component {
@@ -43,11 +44,11 @@ class Products extends Component {
                       <img src={product.image} alt={product.title}></img>
                       <p>{product.title}</p>
                     </a>
-                    <div className='product-price'>
+                    <div className="product-price">
                       <div>{formatCurrency(product.price)}</div>
                       <button
                         onClick={() => this.props.addToCart(product)}
-                        className='button primary'
+                        className="button primary"
                       >
                         Add To Cart
                       </button>
@@ -104,6 +105,6 @@ class Products extends Component {
 export default connect(
   (state) => ({ products: state.products.filteredItems }),
   {
-    fetchProducts,
+    fetchProducts, addToCart
   }
 )(Products);
