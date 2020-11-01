@@ -98,6 +98,7 @@ class App extends React.Component {
           <main>
             <div className='content'>
               <div className='main'>
+<<<<<<< HEAD
                 <Filter
                 // count={this.state.products.length}
                 // size={this.state.size}
@@ -109,6 +110,19 @@ class App extends React.Component {
                   // products={this.state.products}
                   // addToCart={this.addToCart}
                 ></Products>
+=======
+                {/* <Filter
+                  count={this.state.products.length}
+                  size={this.state.size}
+                  sort={this.state.sort}
+                  filterProducts={this.filterProducts}
+                  sortProducts={this.sortProducts}
+                ></Filter>
+                <Products
+                  products={this.state.products}
+                  addToCart={this.addToCart}
+                ></Products> */}
+>>>>>>> 4fa08e750acf1881c762dab18880b719e5477fa7
               </div>
               <div className='sidebar'>
                 <Cart

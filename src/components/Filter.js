@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import { filterProducts, sortProducts } from '../actions/productActions';
 import { connect } from 'react-redux';
 
+=======
+import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import { filterProducts, sortProducts } from '../actions/productActions';
+>>>>>>> 4fa08e750acf1881c762dab18880b719e5477fa7
 // Redux作成により修正
 // export default class Filter extends Component {
 class Filter extends Component {
@@ -11,8 +17,13 @@ class Filter extends Component {
     ) : (
       <div className='filter'>
         <div className='filter-result'>
+<<<<<<< HEAD
           {this.props.filteredProducts.length} Products
         </div>
+=======
+          {this.props.filteredProducts.length}
+        </div>{' '}
+>>>>>>> 4fa08e750acf1881c762dab18880b719e5477fa7
         <div className='filter-sort'>
           Order{' '}
           {/* <select value={this.props.sort} onChange={this.props.sortProducts}> */}
