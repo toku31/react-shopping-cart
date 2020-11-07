@@ -1,11 +1,14 @@
 // feature 1
 import React from 'react';
 // import data from './data.json';
-import Products from './components/Products';
-import Filter from './components/Filter';
-import Cart from './components/Cart';
+// import Products from './components/Products';
+// import Filter from './components/Filter';
+// import Cart from './components/Cart';
 import store from './store';
 import { Provider } from 'react-redux';
+import {BrowserRouter, Route, Link} from "react-router-dom"
+import AdminScreen from './screens/AdminScreen';
+import HomeScreen from './screens/HomeScreen';
 
 class App extends React.Component {
   // constructor() {
@@ -91,50 +94,20 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <div className='grid-container'>
-          <header>
-            <a href='/'>React Shopping Cart</a>
-          </header>
-          <main>
-            <div className='content'>
-              <div className='main'>
-<<<<<<< HEAD
-                <Filter
-                // count={this.state.products.length}
-                // size={this.state.size}
-                // sort={this.state.sort}
-                // filterProducts={this.filterProducts}
-                // sortProducts={this.sortProducts}
-                ></Filter>
-                <Products
-                  // products={this.state.products}
-                  // addToCart={this.addToCart}
-                ></Products>
-=======
-                {/* <Filter
-                  count={this.state.products.length}
-                  size={this.state.size}
-                  sort={this.state.sort}
-                  filterProducts={this.filterProducts}
-                  sortProducts={this.sortProducts}
-                ></Filter>
-                <Products
-                  products={this.state.products}
-                  addToCart={this.addToCart}
-                ></Products> */}
->>>>>>> 4fa08e750acf1881c762dab18880b719e5477fa7
-              </div>
-              <div className='sidebar'>
-                <Cart
-                  // cartItems={this.state.cartItems}
-                  // removeFromCart={this.removeFromCart}
-                  // createOrder={this.createOrder}
-                />
-              </div>
-            </div>
-          </main>
-          <footer>All right is reserved.</footer>
-        </div>
+        <BrowserRouter>
+          <div className='grid-container'>
+            <header>
+              <Link to='/'>React Shopping Cart</Link>
+              <Link to='/admin'>Admin</Link>
+            </header>
+            <main>
+              <Route path="/admin" component={AdminScreen} />
+              <Route path="/" component={HomeScreen} exact />
+
+            </main>
+            <footer>All right is reserved.</footer>
+          </div>
+        </BrowserRouter>
       </Provider>
     );
   }
